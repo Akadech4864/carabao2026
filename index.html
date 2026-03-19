@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="th" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คู่มือการเดินทาง คณะคาราบาวคัพ 2026</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Prompt', sans-serif; background-color: #fafafa; color: #334155; }
+        
+        /* Chart Container Specific Styles */
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container { height: 400px; }
+        }
+
+        /* Hide scrollbar for horizontal scrolling areas but keep functionality */
+        .hide-scrollbar::-webkit-scrollbar { display: none; }
+        .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+
+        .tab-btn.active {
+            background-color: #0f172a; /* Slate 900 */
+            color: white;
+            border-color: #0f172a;
+        }
+        
+        .route-tab-btn.active {
+            background-color: #0f172a;
+            color: white;
+        }
+    </style>
+</head>
+<body class="antialiased selection:bg-emerald-100 selection:text-emerald-900">
+
+<nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-slate-200/60 text-slate-800 transition-all">
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex justify-between items-center py-4">
+            <div class="flex items-center gap-2 text-lg font-bold tracking-wider text-slate-900">
+                <i data-lucide="trophy" class="w-5 h-5 text-emerald-600"></i>
+                <span>CARABAO CUP 2026</span>
+            </div>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-slate-500">
+                <a href="#overview" class="hover:text-emerald-600 transition-colors">ภาพรวม</a>
+                <a href="#routemap" class="hover:text-emerald-600 transition-colors">เส้นทาง</a>
+                <a href="#itinerary" class="hover:text-emerald-600 transition-colors">แผนการเดินทาง</a>
+                <a href="#weather" class="hover:text-emerald-600 transition-colors">สภาพอากาศ</a>
+                <a href="#passengers" class="hover:text-emerald-600 transition-colors">รายชื่อคณะ</a>
+            </div>
+            <div class="md:hidden">
+                <select id="mobileNav" class="bg-slate-50 text-slate-800 border border-slate-200 rounded-lg p-2 text-sm focus:ring-2 focus:ring-emerald-500 outline-none">
+                    <option value="#overview">ภาพรวม</option>
+                    <option value="#routemap">เส้นทาง</option>
+                    <option value="#itinerary">แผนการเดินทาง</option>
+                    <option value="#weather">สภาพอากาศ</option>
+                    <option value="#passengers">รายชื่อคณะ</option>
+                </select>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="max-w-6xl mx-auto px-4 py-8 space-y-16 relative z-10">
+
+    <section id="overview" class="scroll-mt-24 pt-8">
+        <div class="relative rounded-3xl overflow-hidden mb-16 shadow-2xl border border-slate-800">
+            <div class="absolute inset-0 z-0 bg-slate-900">
+                <img src="https://images.gc.eflservices.co.uk/fit-in/1400x1400/09e3fee0-22c3-11f1-8e1e-850023b02f11.jpg" alt="Carabao Cup 2026 Background" class="w-full h-full object-cover opacity-40">
+                <div class="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-transparent to-slate-900/90"></div>
+            </div>
+            
+            <div class="relative z-10 text-center py-24 px-6">
+                <img src="https://files.ekmcdn.com/0bb13f/images/2026-carabao-league-cup-final-arsenal-v-manchester-city-pre-order-an-official-match-pr-1142-p.png?w=660&h=9999&v=542D238B-8541-4227-B961-DA5A859D9F9E" alt="Carabao Cup 2026" class="h-32 md:h-48 mx-auto mb-8 object-contain drop-shadow-2xl brightness-110">
+                <span class="text-emerald-400 font-semibold tracking-widest text-sm uppercase mb-4 block drop-shadow-md">คู่มือการเดินทางแบบเอกซ์คลูซีฟ</span>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-tight drop-shadow-lg">เจาะตำนานคาราบาวคัพ <br class="md:hidden">และมนต์เสน่ห์แห่งสหราชอาณาจักร</h1>
+                <p class="text-slate-200 text-lg max-w-2xl mx-auto leading-relaxed drop-shadow-md">สำหรับคณะเดินทางทั้ง 12 ท่าน ระหว่างวันที่ 21 - 29 มีนาคม 2026 สำรวจข้อมูลไฮไลท์ กำหนดการ สภาพอากาศ และเตรียมความพร้อมได้อย่างง่ายดายในหน้าเดียว</p>
+            </div>
+        </div>
+
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-10 mb-16 text-center max-w-3xl mx-auto">
+            <h2 class="text-xs font-semibold text-slate-400 uppercase tracking-[0.2em] mb-6">นับถอยหลังสู่วันเดินทาง</h2>
+            <div id="countdown" class="text-4xl md:text-6xl font-light text-slate-800 flex justify-center items-baseline gap-6 md:gap-12">
+                <div class="flex flex-col items-center"><span id="cd-days" class="text-emerald-600 font-semibold">00</span><span class="text-xs text-slate-400 font-medium uppercase mt-2 tracking-wider">วัน</span></div>
+                <div class="text-slate-200 font-thin text-4xl">:</div>
+                <div class="flex flex-col items-center"><span id="cd-hours" class="font-medium">00</span><span class="text-xs text-slate-400 font-medium uppercase mt-2 tracking-wider">ชั่วโมง</span></div>
+                <div class="text-slate-200 font-thin text-4xl">:</div>
+                <div class="flex flex-col items-center"><span id="cd-mins" class="font-medium">00</span><span class="text-xs text-slate-400 font-medium uppercase mt-2 tracking-wider">นาที</span></div>
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="bg-white p-8 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:shadow-lg transition-all duration-300 group">
+                <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="ticket" class="w-6 h-6 text-emerald-600"></i>
+                </div>
+                <h3 class="font-semibold text-lg mb-3 text-slate-900">ฟุตบอลนัดชิงชนะเลิศ</h3>
+                <p class="text-sm text-slate-500 leading-relaxed mb-3">สัมผัสประสบการณ์ติดขอบ<a href="https://www.google.com/maps/dir/?api=1&destination=Wembley+Stadium+London" target="_blank" class="text-emerald-600 hover:underline font-medium">สนามเวมบลีย์</a> <a href="https://www.google.com/maps/dir/?api=1&destination=London+UK" target="_blank" class="text-emerald-600 hover:underline font-medium">ลอนดอน</a> ในศึกนัดชิงคาราบาวคัพ วันที่ 22 มี.ค.</p>
+                <a href="https://www.efl.com/competitions/carabao-cup/" target="_blank" class="inline-flex items-center gap-1.5 text-xs font-semibold text-emerald-600 bg-emerald-50 hover:bg-emerald-100 px-3 py-1.5 rounded-lg transition-colors">
+                    <i data-lucide="external-link" class="w-3.5 h-3.5"></i> เว็บไซต์ทางการ
+                </a>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:shadow-lg transition-all duration-300 group">
+                <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="trees" class="w-6 h-6 text-emerald-600"></i>
+                </div>
+                <h3 class="font-semibold text-lg mb-3 text-slate-900">สัมผัสธรรมชาติชนบท</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">สูดอากาศบริสุทธิ์ที่หมู่บ้าน <a href="https://www.google.com/maps/dir/?api=1&destination=Bakewell+UK" target="_blank" class="text-emerald-600 hover:underline font-medium">Bakewell</a>, <a href="https://www.google.com/maps/dir/?api=1&destination=Edensor+UK" target="_blank" class="text-emerald-600 hover:underline font-medium">Edensor</a> และจิบชาชมวิว<a href="https://www.google.com/maps/dir/?api=1&destination=Windermere+UK" target="_blank" class="text-emerald-600 hover:underline font-medium">ทะเลสาบวินเดอร์เมียร์</a></p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:shadow-lg transition-all duration-300 group">
+                <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="castle" class="w-6 h-6 text-emerald-600"></i>
+                </div>
+                <h3 class="font-semibold text-lg mb-3 text-slate-900">ประวัติศาสตร์สุดคลาสสิก</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">เยือน<a href="https://www.google.com/maps/dir/?api=1&destination=Edinburgh+Castle" target="_blank" class="text-emerald-600 hover:underline font-medium">ปราสาทเอดินบะระ</a> สถาปัตยกรรมแห่งสกอตแลนด์ และเมืองประวัติศาสตร์<a href="https://www.google.com/maps/dir/?api=1&destination=York+UK" target="_blank" class="text-emerald-600 hover:underline font-medium">ยอร์ก</a></p>
+            </div>
+            <div class="bg-white p-8 rounded-2xl border border-slate-100 hover:border-emerald-200 hover:shadow-lg transition-all duration-300 group">
+                <div class="w-12 h-12 bg-emerald-50 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+                    <i data-lucide="utensils-crossed" class="w-6 h-6 text-emerald-600"></i>
+                </div>
+                <h3 class="font-semibold text-lg mb-3 text-slate-900">ประสบการณ์อาหารเหนือระดับ</h3>
+                <p class="text-sm text-slate-500 leading-relaxed">จัดเต็มทั้ง Thai Fine Dining, อาหารจีนชื่อดัง และอาหารสไตล์สก็อตติชสุดหรู</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="routemap" class="scroll-mt-24">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-10">
+            <div class="flex items-center gap-3 mb-2">
+                <i data-lucide="map" class="w-6 h-6 text-emerald-600"></i>
+                <h2 class="text-2xl font-bold text-slate-900">ภาพรวมเส้นทางการเดินทาง</h2>
+            </div>
+            <p class="text-slate-500 text-sm mb-8">คลิกเพื่อเลือกดูแผนผังการเดินทางในแต่ละช่วง ทั้งเที่ยวบินระหว่างประเทศ และการเดินทางด้วยรถยนต์ในแต่ละวัน</p>
+            
+            <!-- Tabs -->
+            <div class="flex gap-3 mb-10 border-b border-slate-100 pb-4 overflow-x-auto hide-scrollbar">
+                <button class="route-tab-btn px-6 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition-all duration-300 bg-slate-900 text-white flex items-center gap-2" data-type="outbound" onclick="showRoute('outbound')"><i data-lucide="plane-takeoff" class="w-4 h-4"></i> บินขาไป (21 มี.ค.)</button>
+                <button class="route-tab-btn px-6 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition-all duration-300 bg-slate-50 text-slate-500 hover:bg-slate-100 flex items-center gap-2" data-type="land" onclick="showRoute('land')"><i data-lucide="bus" class="w-4 h-4"></i> ทางรถ (22-27 มี.ค.)</button>
+                <button class="route-tab-btn px-6 py-2.5 rounded-xl text-sm font-medium whitespace-nowrap transition-all duration-300 bg-slate-50 text-slate-500 hover:bg-slate-100 flex items-center gap-2" data-type="inbound" onclick="showRoute('inbound')"><i data-lucide="plane-landing" class="w-4 h-4"></i> บินขากลับ (28-29 มี.ค.)</button>
+            </div>
+
+            <!-- Content Views -->
+            <div id="route-outbound" class="route-view">
+                <div class="flex flex-col md:flex-row items-center justify-between w-full max-w-4xl mx-auto py-8 px-4 gap-8 md:gap-0">
+                    <div class="flex flex-col items-center relative z-10 w-32 group">
+                        <div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl border border-slate-100 group-hover:border-emerald-200 group-hover:bg-emerald-50 transition-colors">🇹🇭</div>
+                        <span class="mt-4 font-semibold text-slate-900 text-center"><a href="https://www.google.com/maps/dir/?api=1&destination=Suvarnabhumi+Airport" target="_blank" class="hover:text-emerald-600 hover:underline">กรุงเทพฯ</a></span>
+                        <span class="text-xs text-slate-500 text-center mt-1">สุวรรณภูมิ (BKK)<br>ออก 08.20 น.</span>
+                    </div>
+                    <div class="hidden md:flex flex-1 h-[2px] bg-slate-100 relative mx-6 items-center justify-center">
+                        <div class="absolute -top-4 text-xs text-slate-500 font-medium bg-white px-3 py-1 rounded-full border border-slate-100 flex items-center gap-1"><i data-lucide="plane" class="w-3 h-3 text-emerald-600"></i> CZ362 (3h 50m)</div>
+                    </div>
+                    <div class="md:hidden text-slate-300"><i data-lucide="arrow-down" class="w-6 h-6"></i></div>
+                    <div class="flex flex-col items-center relative z-10 w-32 group">
+                        <div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl border border-slate-100 group-hover:border-emerald-200 group-hover:bg-emerald-50 transition-colors">🇨🇳</div>
+                        <span class="mt-4 font-semibold text-slate-900 text-center"><a href="https://www.google.com/maps/dir/?api=1&destination=Guangzhou+Baiyun+International+Airport" target="_blank" class="hover:text-emerald-600 hover:underline">กวางโจว</a></span>
+                        <span class="text-xs text-slate-500 text-center mt-1">Baiyun (CAN)<br>ถึง 12.10 / ออก 13.40</span>
+                    </div>
+                    <div class="hidden md:flex flex-1 h-[2px] bg-slate-100 relative mx-6 items-center justify-center">
+                        <div class="absolute -top-4 text-xs text-slate-500 font-medium bg-white px-3 py-1 rounded-full border border-slate-100 flex items-center gap-1"><i data-lucide="plane" class="w-3 h-3 text-emerald-600"></i> CZ303</div>
+                    </div>
+                    <div class="md:hidden text-slate-300"><i data-lucide="arrow-down" class="w-6 h-6"></i></div>
+                    <div class="flex flex-col items-center relative z-10 w-32 group">
+                        <div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl border border-slate-100 group-hover:border-emerald-200 group-hover:bg-emerald-50 transition-colors">🇬🇧</div>
+                        <span class="mt-4 font-semibold text-slate-900 text-center"><a href="https://www.google.com/maps/dir/?api=1&destination=Heathrow+Airport" target="_blank" class="hover:text-emerald-600 hover:underline">ลอนดอน</a></span>
+                        <span class="text-xs text-slate-500 text-center mt-1">Heathrow (LHR)<br>ถึง 18.35 น.</span>
+                    </div>
+                </div>
+            </div>
+
+            <div id="route-land" class="route-view hidden">
+                <div class="space-y-4 max-w-4xl mx-auto">
+                    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center bg-white p-5 rounded-2xl border border-slate-100 hover:border-emerald-200 transition-colors group">
+                        <div class="bg-slate-50 text-slate-600 font-medium px-4 py-2 rounded-xl text-sm whitespace-nowrap w-24 text-center group-hover:bg-emerald-50 group-hover:text-emerald-700 transition-colors">22 มี.ค.</div>
+                        <div class="flex flex-wrap items-center gap-2 flex-1">
+                            <span class="font-medium text-slate-900"><a href="https://www.google.com/maps/dir/?api=1&destination=Wembley+Stadium+London" target="_blank" class="hover:text-emerald-600 hover:underline">ลอนดอน (เวมบลีย์)</a></span>
+                            <span class="text-xs text-slate-500 ml-2 flex items-center gap-1"><i data-lucide="ticket" class="w-3 h-3"></i> ชมฟุตบอลนัดชิงชนะเลิศ</span>
+                        </div>
+                        <div class="text-xs text-slate-400 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">ในเมือง</div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center bg-white p-5 rounded-2xl border border-slate-100 hover:border-emerald-200 transition-colors group">
+                        <div class="bg-slate-50 text-slate-600 font-medium px-4 py-2 rounded-xl text-sm whitespace-nowrap w-24 text-center group-hover:bg-emerald-50 group-hover:text-emerald-700 transition-colors">23 มี.ค.</div>
+                        <div class="flex flex-wrap items-center gap-3 flex-1 text-sm sm:text-base">
+                            <span class="font-medium text-slate-900"><a href="https://www.google.com/maps/dir/?api=1&destination=London+UK" target="_blank" class="hover:text-emerald-600 hover:underline">London</a></span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-400"></i>
+                            <span class="font-medium text-slate-900"><a href="https://www.google.com/maps/dir/?api=1&destination=Peak+District+UK" target="_blank" class="hover:text-emerald-600 hover:underline">Peak District</a></span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-400"></i>
+                            <span class="font-medium text-slate-900"><a href="https://www.google.com/maps/dir/?api=1&destination=Windermere+UK" target="_blank" class="hover:text-emerald-600 hover:underline">Windermere</a></span>
+                        </div>
+                        <div class="text-xs text-slate-400 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">~290 ไมล์</div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center bg-white p-5 rounded-2xl border border-slate-100 hover:border-emerald-200 transition-colors group">
+                        <div class="bg-slate-50 text-slate-600 font-medium px-4 py-2 rounded-xl text-sm whitespace-nowrap w-24 text-center group-hover:bg-emerald-50 group-hover:text-emerald-700 transition-colors">24 มี.ค.</div>
+                        <div class="flex flex-wrap items-center gap-3 flex-1 text-sm sm:text-base">
+                            <span class="font-medium text-slate-900"><a href="https://www.google.com/maps/dir/?api=1&destination=Lake+District+UK" target="_blank" class="hover:text-emerald-600 hover:underline">Lake District</a></span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-400"></i>
+                            <span class="font-medium text-slate-900"><a href="https://www.google.com/maps/dir/?api=1&destination=Edinburgh+UK" target="_blank" class="hover:text-emerald-600 hover:underline">Edinburgh</a></span>
+                        </div>
+                        <div class="text-xs text-slate-400 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">~150 ไมล์</div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center bg-white p-5 rounded-2xl border border-slate-100 hover:border-emerald-200 transition-colors group">
+                        <div class="bg-slate-50 text-slate-600 font-medium px-4 py-2 rounded-xl text-sm whitespace-nowrap w-24 text-center group-hover:bg-emerald-50 group-hover:text-emerald-700 transition-colors">25 มี.ค.</div>
+                        <div class="flex flex-wrap items-center gap-2 flex-1">
+                            <span class="font-medium text-slate-900"><a href="https://www.google.com/maps/dir/?api=1&destination=Edinburgh+UK" target="_blank" class="hover:text-emerald-600 hover:underline">Edinburgh City</a></span>
+                            <span class="text-xs text-slate-500 ml-2 flex items-center gap-1"><i data-lucide="castle" class="w-3 h-3"></i> ปราสาทเอดินบะระ / จุดชมวิว</span>
+                        </div>
+                        <div class="text-xs text-slate-400 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">ในเมือง</div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center bg-white p-5 rounded-2xl border border-slate-100 hover:border-emerald-200 transition-colors group">
+                        <div class="bg-slate-50 text-slate-600 font-medium px-4 py-2 rounded-xl text-sm whitespace-nowrap w-24 text-center group-hover:bg-emerald-50 group-hover:text-emerald-700 transition-colors">26 มี.ค.</div>
+                        <div class="flex flex-wrap items-center gap-3 flex-1 text-sm sm:text-base">
+                            <span class="font-medium text-slate-900"><a href="https://www.google.com/maps/dir/?api=1&destination=Edinburgh+UK" target="_blank" class="hover:text-emerald-600 hover:underline">Edinburgh</a></span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-400"></i>
+                            <span class="font-medium text-slate-900"><a href="https://www.google.com/maps/dir/?api=1&destination=York+UK" target="_blank" class="hover:text-emerald-600 hover:underline">York</a></span>
+                        </div>
+                        <div class="text-xs text-slate-400 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">~210 ไมล์ (4.5 ชม.)</div>
+                    </div>
+                    <div class="flex flex-col sm:flex-row gap-4 items-start sm:items-center bg-white p-5 rounded-2xl border border-slate-100 hover:border-emerald-200 transition-colors group">
+                        <div class="bg-slate-50 text-slate-600 font-medium px-4 py-2 rounded-xl text-sm whitespace-nowrap w-24 text-center group-hover:bg-emerald-50 group-hover:text-emerald-700 transition-colors">27 มี.ค.</div>
+                        <div class="flex flex-wrap items-center gap-3 flex-1 text-sm sm:text-base">
+                            <span class="font-medium text-slate-900"><a href="https://www.google.com/maps/dir/?api=1&destination=York+UK" target="_blank" class="hover:text-emerald-600 hover:underline">York</a></span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-400"></i>
+                            <span class="font-medium text-slate-900"><a href="https://www.google.com/maps/dir/?api=1&destination=Bicester+Village+UK" target="_blank" class="hover:text-emerald-600 hover:underline">Bicester</a></span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 text-emerald-400"></i>
+                            <span class="font-medium text-slate-900"><a href="https://www.google.com/maps/dir/?api=1&destination=London+UK" target="_blank" class="hover:text-emerald-600 hover:underline">London</a></span>
+                        </div>
+                        <div class="text-xs text-slate-400 bg-slate-50 px-3 py-1.5 rounded-lg border border-slate-100">~230 ไมล์ (5 ชม.)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="route-inbound" class="route-view hidden">
+                <div class="flex flex-col md:flex-row items-center justify-between w-full max-w-4xl mx-auto py-8 px-4 gap-8 md:gap-0">
+                    <div class="flex flex-col items-center relative z-10 w-32 group">
+                        <div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl border border-slate-100 group-hover:border-emerald-200 group-hover:bg-emerald-50 transition-colors">🇬🇧</div>
+                        <span class="mt-4 font-semibold text-slate-900 text-center"><a href="https://www.google.com/maps/dir/?api=1&destination=Heathrow+Airport" target="_blank" class="hover:text-emerald-600 hover:underline">ลอนดอน</a></span>
+                        <span class="text-xs text-slate-500 text-center mt-1">Heathrow (LHR)<br>ออก 22.00 น. (28 มี.ค.)</span>
+                    </div>
+                    <div class="hidden md:flex flex-1 h-[2px] bg-slate-100 relative mx-6 items-center justify-center">
+                        <div class="absolute -top-4 text-xs text-slate-500 font-medium bg-white px-3 py-1 rounded-full border border-slate-100 flex items-center gap-1"><i data-lucide="plane" class="w-3 h-3 text-emerald-600"></i> CZ304</div>
+                    </div>
+                    <div class="md:hidden text-slate-300"><i data-lucide="arrow-down" class="w-6 h-6"></i></div>
+                    <div class="flex flex-col items-center relative z-10 w-32 group">
+                        <div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl border border-slate-100 group-hover:border-emerald-200 group-hover:bg-emerald-50 transition-colors">🇨🇳</div>
+                        <span class="mt-4 font-semibold text-slate-900 text-center"><a href="https://www.google.com/maps/dir/?api=1&destination=Guangzhou+Baiyun+International+Airport" target="_blank" class="hover:text-emerald-600 hover:underline">กวางโจว</a></span>
+                        <span class="text-xs text-slate-500 text-center mt-1">Baiyun (CAN)<br>ถึง 18.00 / ออก 20.05</span>
+                    </div>
+                    <div class="hidden md:flex flex-1 h-[2px] bg-slate-100 relative mx-6 items-center justify-center">
+                        <div class="absolute -top-4 text-xs text-slate-500 font-medium bg-white px-3 py-1 rounded-full border border-slate-100 flex items-center gap-1"><i data-lucide="plane" class="w-3 h-3 text-emerald-600"></i> CZ361</div>
+                    </div>
+                    <div class="md:hidden text-slate-300"><i data-lucide="arrow-down" class="w-6 h-6"></i></div>
+                    <div class="flex flex-col items-center relative z-10 w-32 group">
+                        <div class="w-16 h-16 bg-slate-50 rounded-2xl flex items-center justify-center text-3xl border border-slate-100 group-hover:border-emerald-200 group-hover:bg-emerald-50 transition-colors">🇹🇭</div>
+                        <span class="mt-4 font-semibold text-slate-900 text-center"><a href="https://www.google.com/maps/dir/?api=1&destination=Suvarnabhumi+Airport" target="_blank" class="hover:text-emerald-600 hover:underline">กรุงเทพฯ</a></span>
+                        <span class="text-xs text-slate-500 text-center mt-1">สุวรรณภูมิ (BKK)<br>ถึง 22.00 น. (29 มี.ค.)</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="itinerary" class="scroll-mt-24">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-100 overflow-hidden">
+            <div class="p-8 md:p-10 border-b border-slate-100 bg-white">
+                <div class="flex items-center gap-3 mb-2">
+                    <i data-lucide="calendar-days" class="w-6 h-6 text-emerald-600"></i>
+                    <h2 class="text-2xl font-bold text-slate-900">แผนการเดินทางแบบเจาะลึก</h2>
+                </div>
+                <p class="text-slate-500 text-sm">ส่วนนี้แสดงรายละเอียดการเดินทางในแต่ละวัน คลิกที่ปุ่มวันที่ด้านล่างเพื่อสลับดูตารางกิจกรรม เวลา สถานที่ พร้อมลิงก์แผนที่นำทาง</p>
+            </div>
+            
+            <div class="px-8 pt-6 pb-2 border-b border-slate-100">
+                <div id="dayTabs" class="flex overflow-x-auto hide-scrollbar gap-3 pb-4">
+                </div>
+            </div>
+
+            <div class="p-8 md:p-10 bg-slate-50/50">
+                <div id="dailyOverview" class="mb-8 bg-white text-slate-800 p-6 rounded-2xl text-sm border border-slate-100 shadow-sm flex flex-col md:flex-row md:items-center justify-between gap-4">
+                </div>
+
+                <div class="relative border-l border-slate-200 ml-4 md:ml-6 space-y-10" id="timelineContainer">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="weather" class="scroll-mt-24">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-10">
+            <div class="flex items-center gap-3 mb-2">
+                <i data-lucide="cloud-sun" class="w-6 h-6 text-emerald-600"></i>
+                <h2 class="text-2xl font-bold text-slate-900">สภาพอากาศและการเตรียมเครื่องแต่งกาย</h2>
+            </div>
+            <p class="text-slate-500 text-sm mb-10">กราฟด้านล่างแสดงแนวโน้มอุณหภูมิตลอดทริป จะเห็นได้ว่าอุณหภูมิจะลดต่ำลงที่สุดเมื่อเดินทางขึ้นเหนือสู่เอดินบะระ โปรดศึกษาข้อมูลสภาพอากาศในแต่ละพื้นที่เพื่อเตรียมเลเยอร์เสื้อผ้าได้อย่างเหมาะสม</p>
+
+            <div class="w-full flex justify-center mb-10">
+                <div class="chart-container">
+                    <canvas id="weatherChart"></canvas>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mt-8" id="weatherCards">
+            </div>
+        </div>
+    </section>
+
+    <section id="passengers" class="scroll-mt-24">
+        <div class="bg-white rounded-2xl shadow-sm border border-slate-100 p-8 md:p-10">
+            <div class="flex items-center gap-3 mb-2">
+                <i data-lucide="users" class="w-6 h-6 text-emerald-600"></i>
+                <h2 class="text-2xl font-bold text-slate-900">รายชื่อและข้อมูลคณะเดินทาง</h2>
+            </div>
+            <p class="text-slate-500 text-sm mb-8">ส่วนนี้รวบรวมข้อมูลสมาชิกผู้ร่วมทริปทั้ง 12 ท่าน ใช้ช่องค้นหาด้านล่างเพื่อค้นหารายชื่อ หรือหมายเลขพาสปอร์ตอย่างรวดเร็ว</p>
+
+            <div class="mb-8 relative max-w-md">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-4 text-slate-400">
+                    <i data-lucide="search" class="w-4 h-4"></i>
+                </span>
+                <input type="text" id="searchInput" placeholder="ค้นหาชื่อ, สถานที่เกิด หรือ พาสปอร์ต..." class="w-full pl-11 pr-4 py-3 bg-slate-50 rounded-xl border border-slate-200 text-sm focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:bg-white transition-all">
+            </div>
+
+            <div class="overflow-x-auto rounded-xl border border-slate-100 shadow-sm">
+                <table class="min-w-full divide-y divide-slate-100 text-sm text-left">
+                    <thead class="bg-slate-50 text-slate-600 font-medium">
+                        <tr>
+                            <th scope="col" class="px-6 py-4 whitespace-nowrap">ลำดับ</th>
+                            <th scope="col" class="px-6 py-4 whitespace-nowrap">ชื่อ - สกุล</th>
+                            <th scope="col" class="px-6 py-4 whitespace-nowrap">หมายเลขพาสปอร์ต</th>
+                            <th scope="col" class="px-6 py-4 whitespace-nowrap">สถานที่เกิด</th>
+                            <th scope="col" class="px-6 py-4 whitespace-nowrap">วันหมดอายุพาสปอร์ต</th>
+                        </tr>
+                    </thead>
+                    <tbody id="passengerTableBody" class="bg-white divide-y divide-slate-50">
+                    </tbody>
+                </table>
+                <div id="noResults" class="hidden text-center py-12 text-slate-500 flex-col items-center gap-3">
+                    <i data-lucide="search-x" class="w-8 h-8 text-slate-300 mx-auto"></i>
+                    <span>ไม่พบข้อมูลที่ค้นหา</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="bg-white border-t border-slate-100 py-10 text-center text-sm">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col items-center gap-4">
+        <i data-lucide="compass" class="w-6 h-6 text-slate-300"></i>
+        <p class="text-slate-500 font-medium"> 2026 ทริปคาราบาวคัพ - คู่มือการเดินทางสำหรับใช้ภายในคณะเดินทางเท่านั้น</p>
+    </div>
+</footer>
+
+<script>
+    const itineraryData = [
+        {
+            dayLabel: "วันเสาร์ 21",
+            dateFull: "เสาร์ 21 มีนาคม 2026",
+            title: "เหินฟ้าสู่มหานครลอนดอน",
+            weather: "5-14°C มีแดด | แนะนำ: ชุดเดินทางสบายๆ, พกแจ็คเก็ตกันหนาวระดับกลาง",
+            events: [
+                { time: "05.00 น.", desc: "พร้อมกัน ณ สนามบินสุวรรณภูมิ ประตู 10 เคาน์เตอร์ U", link: "https://www.google.com/maps/dir/?api=1&destination=Suvarnabhumi+Airport", linkText: "สนามบินสุวรรณภูมิ", icon: "plane" },
+                { time: "08.20 น.", desc: "ออกเดินทางสู่เมืองกวางโจว โดยเที่ยวบิน CZ362 (3 ชม. 50 นาที)", icon: "plane-takeoff" },
+                { time: "12.10 น.", desc: "ถึงสนามบิน Guangzhou Baiyan แวะพักเปลี่ยนเครื่อง", link: "https://www.google.com/maps/dir/?api=1&destination=Guangzhou+Baiyun+International+Airport", linkText: "Guangzhou Baiyan", icon: "map-pin" },
+                { time: "13.40 น.", desc: "ออกเดินทางต่อสู่กรุงลอนดอน โดยเที่ยวบิน CZ303", link: "https://www.google.com/maps/dir/?api=1&destination=London+UK", linkText: "ลอนดอน", icon: "plane-takeoff" },
+                { time: "18.35 น.", desc: "เดินทางถึงสนามบิน Heathrow ประเทศอังกฤษ", link: "https://www.google.com/maps/dir/?api=1&destination=Heathrow+Airport", linkText: "Heathrow Airport", icon: "plane-landing" },
+                { time: "20.00 น.", desc: "รับประทานอาหารเย็นสไตล์ Thai Fine Dining ที่ร้าน Latymer’s", link: "https://www.google.com/maps/dir/?api=1&destination=Latymers+London", linkText: "Latymer’s", icon: "utensils" },
+                { time: "ค่ำ", desc: "เข้าเช็คอินที่พักหรู Conrad London St. James พักผ่อนตามอัธยาศัย", link: "https://www.google.com/maps/dir/?api=1&destination=Conrad+London+St.+James", linkText: "Conrad London St. James", icon: "hotel" }
+            ]
+        },
+        {
+            dayLabel: "วันอาทิตย์ 22",
+            dateFull: "อาทิตย์ 22 มีนาคม 2026",
+            title: "ศึกนัดชิง คาราบาวคัพ!",
+            weather: "5-14°C เย็นสบาย | แนะนำ: ชุดเชียร์ฟุตบอล, เสื้อคลุมทับช่วงเย็น",
+            events: [
+                { time: "09.00 น.", desc: "รับประทานอาหารเช้าที่โรงแรม", icon: "coffee" },
+                { time: "10.00 น.", desc: "ออกเดินทางมุ่งหน้าสู่สนามเวมบลีย์", link: "https://www.google.com/maps/dir/?api=1&destination=Wembley+Stadium+London", linkText: "สนามเวมบลีย์", icon: "bus" },
+                { time: "13.00 น.", desc: "เข้าสู่สนามฟุตบอล พร้อมรับประทานอาหารเที่ยงภายในบริเวณงาน", icon: "ticket" },
+                { time: "19.00 น.", desc: "สิ้นสุดการแข่งขัน (เวลาโดยประมาณ)", icon: "trophy" },
+                { time: "21.00 น.", desc: "ฉลองมื้อค่ำเมนูเป็ดย่างชื่อดังระดับตำนาน ร้านโฟร์ซีซั่น ไชน่าทาวน์", link: "https://www.google.com/maps/dir/?api=1&destination=Four+Seasons+Chinatown+London", linkText: "ร้านโฟร์ซีซั่น", icon: "utensils" }
+            ]
+        },
+        {
+            dayLabel: "วันจันทร์ 23",
+            dateFull: "จันทร์ 23 มีนาคม 2026",
+            title: "เสน่ห์ชนบท Peak District สู่ทะเลสาบ",
+            weather: "3-10°C มีโอกาสฝนตก 65% | แนะนำ: รองเท้ากันน้ำ, เสื้อกันฝนมีฮู้ด, ร่ม",
+            events: [
+                { time: "07.00 น.", desc: "รับประทานอาหารเช้าที่โรงแรม", icon: "coffee" },
+                { time: "07.30 น.", desc: "ออกเดินทางสู่เมืองน่ารัก Bakewell", link: "https://www.google.com/maps/dir/?api=1&destination=Bakewell+UK", linkText: "Bakewell", icon: "bus" },
+                { time: "10.45 น.", desc: "เดินเล่นชมความงามของหมู่บ้าน Bakewell", link: "https://www.google.com/maps/dir/?api=1&destination=Bakewell+UK", linkText: "หมู่บ้าน Bakewell", icon: "footprints" },
+                { time: "11.20 น.", desc: "แวะชมสถาปัตยกรรมเก่าแก่ที่ Haddon Hall", link: "https://www.google.com/maps/dir/?api=1&destination=Haddon+Hall+UK", linkText: "Haddon Hall", icon: "castle" },
+                { time: "12.15 น.", desc: "ชมสวนสวยอลังการที่ Chatsworth House Gardens", link: "https://www.google.com/maps/dir/?api=1&destination=Chatsworth+House+UK", linkText: "Chatsworth House", icon: "trees" },
+                { time: "13.00 น.", desc: "เดินรับบรรยากาศชิลๆ ที่ หมู่บ้าน Edensor", link: "https://www.google.com/maps/dir/?api=1&destination=Edensor+UK", linkText: "Edensor", icon: "home" },
+                { time: "13.30 น.", desc: "รับประทานอาหารเที่ยงที่ Cavendish Hotel Baslow", link: "https://www.google.com/maps/dir/?api=1&destination=Cavendish+Hotel+Baslow", linkText: "Cavendish Hotel", icon: "utensils" },
+                { time: "14.45 น.", desc: "ออกเดินทางมุ่งหน้าสู่เขตอุทยานแห่งชาติ Windermere", link: "https://www.google.com/maps/dir/?api=1&destination=Windermere+UK", linkText: "Windermere", icon: "bus" },
+                { time: "17.15 น.", desc: "เช็คอินเข้าสู่ที่พักริมทะเลสาบสุดโรแมนติก Lake Hotel & Spa", link: "https://www.google.com/maps/dir/?api=1&destination=Lake+Hotel+and+Spa+Windermere", linkText: "Lake Hotel & Spa", icon: "hotel" },
+                { time: "18.00 น.", desc: "รับประทานอาหารเย็นที่โรงแรม", icon: "utensils" }
+            ]
+        },
+        {
+            dayLabel: "วันอังคาร 24",
+            dateFull: "อังคาร 24 มีนาคม 2026",
+            title: "มนต์เสน่ห์สกอตแลนด์",
+            weather: "1-10°C หนาวที่สุด! ฝนตก 65% | แนะนำ: โค้ทหนา, ลองจอน, ถุงมือ, ร่ม",
+            events: [
+                { time: "07.00 น.", desc: "รับประทานอาหารเช้าที่โรงแรม", icon: "coffee" },
+                { time: "09.00 น.", desc: "แวะชมเมืองเล็กๆ ที่สวยงามอย่าง Ambleside", link: "https://www.google.com/maps/dir/?api=1&destination=Ambleside+UK", linkText: "Ambleside", icon: "footprints" },
+                { time: "10.45 น.", desc: "เดินเล่นเมืองกวี Grasmere", link: "https://www.google.com/maps/dir/?api=1&destination=Grasmere+UK", linkText: "Grasmere", icon: "footprints" },
+                { time: "12.30 น.", desc: "จิบน้ำชายามบ่าย (Afternoon tea) ชมวิวทะเลสาบ Langdale Chase Hotel", link: "https://www.google.com/maps/dir/?api=1&destination=Langdale+Chase+Hotel", linkText: "Langdale Chase Hotel", icon: "coffee" },
+                { time: "13.30 น.", desc: "มุ่งหน้าขึ้นเหนือสู่เมือง Edinburgh พร้อมแวะทานมื้อเที่ยง", link: "https://www.google.com/maps/dir/?api=1&destination=Edinburgh+UK", linkText: "Edinburgh", icon: "bus" },
+                { time: "18.30 น.", desc: "รับประทานอาหารเย็นที่ร้าน Dusit Thai Edinburgh", link: "https://www.google.com/maps/dir/?api=1&destination=Dusit+Thai+Edinburgh", linkText: "Dusit Thai", icon: "utensils" },
+                { time: "20.00 น.", desc: "เช็คอินเข้าสู่ที่พัก Kimpton Charlotte Square", link: "https://www.google.com/maps/dir/?api=1&destination=Kimpton+Charlotte+Square+Edinburgh", linkText: "Kimpton Charlotte", icon: "hotel" }
+            ]
+        },
+        {
+            dayLabel: "วันพุธ 25",
+            dateFull: "พุธ 25 มีนาคม 2026",
+            title: "เจาะลึกเมืองหลวงแห่งสกอตแลนด์",
+            weather: "1-7°C หนาวจัดประปราย | แนะนำ: ชุดกันหนาวกลางแจ้ง, ชุดสวยงามสำหรับ Fine Dining",
+            events: [
+                { time: "07.30 น.", desc: "รับประทานอาหารเช้าที่โรงแรม", icon: "coffee" },
+                { time: "09.00 น.", desc: "ชมความยิ่งใหญ่ของ ปราสาทเอดินบะระ (Edinburgh Castle)", link: "https://www.google.com/maps/dir/?api=1&destination=Edinburgh+Castle", linkText: "Edinburgh Castle", icon: "castle" },
+                { time: "11.45 น.", desc: "ถ่ายรูปสถาปัตยกรรมสุดคลาสสิกที่ หมู่บ้าน Dean Village", link: "https://www.google.com/maps/dir/?api=1&destination=Dean+Village+Edinburgh", linkText: "Dean Village", icon: "camera" },
+                { time: "13.00 น.", desc: "รับประทานอาหารเที่ยงที่ร้าน The Dome Edinburgh (ยุโรปหรู)", link: "https://www.google.com/maps/dir/?api=1&destination=The+Dome+Edinburgh", linkText: "The Dome", icon: "utensils" },
+                { time: "16.00 น.", desc: "ชมวิวเมืองแบบ 360 องศาที่ จุดชมวิว Calton Hill", link: "https://www.google.com/maps/dir/?api=1&destination=Calton+Hill+Edinburgh", linkText: "Calton Hill", icon: "sunset" },
+                { time: "18.30 น.", desc: "ดินเนอร์สุดพิเศษ (Fine Dining สไตล์สกอตติช) ที่ Prestonfield House", link: "https://www.google.com/maps/dir/?api=1&destination=Prestonfield+House+Edinburgh", linkText: "Prestonfield House", icon: "utensils" }
+            ]
+        },
+        {
+            dayLabel: "วันพฤหัส 26",
+            dateFull: "พฤหัสบดี 26 มีนาคม 2026",
+            title: "ล่องใต้สู่เมืองประวัติศาสตร์ยอร์ก",
+            weather: "2-8°C มีเมฆและแดดสลับ | แนะนำ: แต่งกายแบบ Layering สวมทับหลายชั้น",
+            events: [
+                { time: "08.00 น.", desc: "รับประทานอาหารเช้าที่โรงแรม", icon: "coffee" },
+                { time: "09.00 น.", desc: "เดินทางข้ามประเทศกลับสู่อังกฤษ มุ่งหน้าเมือง York (4.5 ชม.)", link: "https://www.google.com/maps/dir/?api=1&destination=York+UK", linkText: "York", icon: "bus" },
+                { time: "13.00 น.", desc: "รับประทานอาหารเที่ยงรสจัดจ้านสไตล์จีนที่ Red Chilli York", link: "https://www.google.com/maps/dir/?api=1&destination=Red+Chilli+York", linkText: "Red Chilli", icon: "utensils" },
+                { time: "บ่าย", desc: "เดินเล่นชมเมืองประวัติศาสตร์ยอร์กตามอัธยาศัย", icon: "footprints" },
+                { time: "18.30 น.", desc: "รับประทานอาหารเย็นที่ The Old Siam York (อาหารไทย)", link: "https://www.google.com/maps/dir/?api=1&destination=The+Old+Siam+York", linkText: "The Old Siam", icon: "utensils" },
+                { time: "20.00 น.", desc: "เช็คอินเข้าสู่ที่พักสุดหรู The Grand York Hotel", link: "https://www.google.com/maps/dir/?api=1&destination=The+Grand+York+Hotel", linkText: "The Grand York", icon: "hotel" }
+            ]
+        },
+        {
+            dayLabel: "วันศุกร์ 27",
+            dateFull: "ศุกร์ 27 มีนาคม 2026",
+            title: "วันแห่งการช้อปปิ้งและวังเก่า",
+            weather: "2-8°C เช้าฝน 55% บ่ายมีแดด | แนะนำ: แจ็คเก็ตกันลม, รองเท้าผ้าใบ, ร่ม",
+            events: [
+                { time: "07.30 น.", desc: "รับประทานอาหารเช้าที่โรงแรม", icon: "coffee" },
+                { time: "08.30 น.", desc: "ออกเดินทางมุ่งหน้าสู่สวรรค์นักช้อป Bicester Village", link: "https://www.google.com/maps/dir/?api=1&destination=Bicester+Village+UK", linkText: "Bicester Village", icon: "bus" },
+                { time: "12.30 น.", desc: "อิสระช้อปปิ้ง Outlet หรือเข้าชม พระราชวัง Blenheim Palace", link: "https://www.google.com/maps/dir/?api=1&destination=Blenheim+Palace+UK", linkText: "Blenheim Palace", icon: "shopping-bag" },
+                { time: "15.30 น.", desc: "ออกเดินทางกลับสู่ ลอนดอน (1 ชม.)", link: "https://www.google.com/maps/dir/?api=1&destination=London+UK", linkText: "London", icon: "bus" },
+                { time: "18.00 น.", desc: "รับประทานอาหารเย็น", icon: "utensils" }
+            ]
+        },
+        {
+            dayLabel: "เสาร์ 28-อาทิตย์ 29",
+            dateFull: "เสาร์ 28 - อาทิตย์ 29 มีนาคม 2026",
+            title: "บินลัดฟ้ากลับบ้านเกิด",
+            weather: "6-12°C วันที่ 28 โอกาสฝนตก 65%",
+            events: [
+                { time: "07.30 น.", desc: "(28 มี.ค.) รับประทานอาหารเช้าที่โรงแรม พักผ่อนเก็บตก<a href=\"https://www.google.com/maps/dir/?api=1&destination=London+UK\" target=\"_blank\" class=\"text-emerald-600 hover:underline font-medium\">ลอนดอน</a>", link: "https://www.google.com/maps/dir/?api=1&destination=London+UK", linkText: "ลอนดอน", icon: "coffee" },
+                { time: "22.00 น.", desc: "(28 มี.ค.) ออกเดินทางกลับ โดยเที่ยวบิน CZ304", icon: "plane-takeoff" },
+                { time: "18.00 น.", desc: "(29 มี.ค.) เดินทางถึง สนามบิน Guangzhou Baiyan", link: "https://www.google.com/maps/dir/?api=1&destination=Guangzhou+Baiyun+International+Airport", linkText: "Guangzhou Baiyan", icon: "plane-landing" },
+                { time: "20.05 น.", desc: "(29 มี.ค.) ออกเดินทางกลับไทย โดยเที่ยวบิน CZ361", icon: "plane-takeoff" },
+                { time: "22.00 น.", desc: "(29 มี.ค.) เดินทางถึง สนามบินสุวรรณภูมิ โดยสวัสดิภาพ", link: "https://www.google.com/maps/dir/?api=1&destination=Suvarnabhumi+Airport", linkText: "สนามบินสุวรรณภูมิ", icon: "flag" }
+            ]
+        }
+    ];
+
+    const weatherGuideData = [
+        { city: "London", link: "https://www.google.com/maps/dir/?api=1&destination=London+UK", days: "21-23, 27-28 มี.ค.", weather: "อุณหภูมิ 2-14°C มีเมฆ/แดด (ระวังฝน 28 มี.ค.)", gear: "แจ็คเก็ตระดับปานกลาง, ร่ม/เสื้อกันฝน", icon: "cloud-sun" },
+        { city: "Lake District", link: "https://www.google.com/maps/dir/?api=1&destination=Lake+District+UK", days: "23 มี.ค.", weather: "อุณหภูมิ 3-10°C มีโอกาสฝนตก 65%", gear: "รองเท้ากันน้ำ, แจ็คเก็ตกันน้ำมีฮู้ด", icon: "cloud-rain" },
+        { city: "Edinburgh", link: "https://www.google.com/maps/dir/?api=1&destination=Edinburgh+UK", days: "24-26 มี.ค.", weather: "อุณหภูมิ 1-10°C หนาวจัด, ฝน 65% ในวันที่ 24", gear: "จัดเต็ม! โค้ทหนา, ลองจอน, ถุงมือ, ผ้าพันคอ, ร่ม", icon: "snowflake" },
+        { city: "York", link: "https://www.google.com/maps/dir/?api=1&destination=York+UK", days: "26-27 มี.ค.", weather: "อุณหภูมิ 2-11°C เมฆ/แดด (เช้า 27 มี.ค. ฝนเล็กน้อย)", gear: "แต่งกายแบบมีเลเยอร์, ร่มพับ", icon: "cloud-sun" },
+        { city: "Bicester", link: "https://www.google.com/maps/dir/?api=1&destination=Bicester+Village+UK", days: "27 มี.ค.", weather: "อุณหภูมิ 2-8°C มีโอกาสฝนตก 55%", gear: "แจ็คเก็ตกันลม/ละอองน้ำ, ร่ม", icon: "cloud-rain" }
+    ];
+
+    const passengersData = [
+        { id: "1", name: "MRS. KANOKWAN PUNPETCH", pass: "AC2520687", pof: "RAYONG", exp: "07 FEB 2032" },
+        { id: "2", name: "MISS DUSSADEE CHAIKITI", pass: "AC3667122", pof: "CHIANG RAI", exp: "21 JUL 2032" },
+        { id: "3", name: "MISS TEERADA SUVAPIROMCHOT", pass: "AC2881645", pof: "BANGKOK", exp: "16 FEB 2027" },
+        { id: "4", name: "MISS KANISA KLINKESORN", pass: "AC2551674", pof: "SAMUT SONGKHRAM", exp: "19 APR 2032" },
+        { id: "5", name: "MISS THUNYAPHORN WARAGUNTHAPHATCHARA", pass: "AD0024563", pof: "BURIRAM", exp: "19 SEP 2032" },
+        { id: "6", name: "MRS. SUPRAWEE WONGSAWAT", pass: "AC2240490", pof: "BANGKOK", exp: "04 APR 2031" },
+        { id: "7", name: "MRS. RACHIT PUTTIPONG", pass: "AC4266943", pof: "BANGKOK", exp: "12 DEC 2032" },
+        { id: "8", name: "MR. NAPHAT KRUARAT", pass: "AC2933998", pof: "BANGKOK", exp: "08 MAR 2032" },
+        { id: "9", name: "MR. NARADEJ TIPPARAK", pass: "AC3137785", pof: "BANGKOK", exp: "16 MAY 2032" },
+        { id: "10", name: "MRS. PHANCHITA WANSIRIPAK", pass: "AC2932375", pof: "BANGKOK", exp: "07 MAR 2032" },
+        { id: "11", name: "MR. EKNIRUT WANSIRIPAK", pass: "AC4225541", pof: "PHRAE", exp: "07 DEC 2032" },
+        { id: "12", name: "MR.SANCHAI TINVONGDANG", pass: "AD1221753", pof: "SUPHAN BURI", exp: "12 FEB 2034" }
+    ];
+
+    // State
+    let currentDayIndex = 0;
+
+    // Initialize logic
+    document.addEventListener("DOMContentLoaded", () => {
+        initNavigation();
+        initCountdown();
+        initItinerary();
+        initWeather();
+        initPassengers();
+        
+        // Initialize any static icons
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+    });
+
+    function showRoute(type) {
+        // Hide all views
+        document.querySelectorAll('.route-view').forEach(el => el.classList.add('hidden'));
+        
+        // Reset buttons styling
+        document.querySelectorAll('.route-tab-btn').forEach(btn => {
+            btn.classList.remove('bg-emerald-700', 'text-white');
+            btn.classList.add('bg-slate-100', 'text-slate-600');
+        });
+
+        // Show selected view
+        document.getElementById(`route-${type}`).classList.remove('hidden');
+        
+        // Highlight active button
+        const activeBtn = document.querySelector(`.route-tab-btn[data-type="${type}"]`);
+        activeBtn.classList.remove('bg-slate-100', 'text-slate-600', 'hover:bg-emerald-50');
+        activeBtn.classList.add('bg-emerald-700', 'text-white');
+    }
+
+    function initNavigation() {
+        const mobileNav = document.getElementById("mobileNav");
+        mobileNav.addEventListener("change", (e) => {
+            window.location.hash = e.target.value;
+        });
+    }
+
+    function initCountdown() {
+        const targetDate = new Date("March 21, 2026 05:00:00").getTime();
+        
+        function update() {
+            const now = new Date().getTime();
+            const distance = targetDate - now;
+
+            if (distance < 0) {
+                document.getElementById("countdown").innerHTML = "<div class='text-emerald-600'>เริ่มการเดินทางแล้ว! 🛫</div>";
+                return;
+            }
+
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+
+            document.getElementById("cd-days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("cd-hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("cd-mins").innerText = minutes.toString().padStart(2, '0');
+        }
+        
+        update();
+        setInterval(update, 60000); // Update every minute
+    }
+
+    function initItinerary() {
+        const tabsContainer = document.getElementById("dayTabs");
+        
+        // Auto-select current day if within trip dates
+        const now = new Date();
+        const year = now.getFullYear();
+        const month = now.getMonth() + 1; // 1-12
+        const date = now.getDate();
+        
+        if (year === 2026 && month === 3 && date >= 21 && date <= 29) {
+            if (date === 21) currentDayIndex = 0;
+            else if (date === 22) currentDayIndex = 1;
+            else if (date === 23) currentDayIndex = 2;
+            else if (date === 24) currentDayIndex = 3;
+            else if (date === 25) currentDayIndex = 4;
+            else if (date === 26) currentDayIndex = 5;
+            else if (date === 27) currentDayIndex = 6;
+            else if (date >= 28) currentDayIndex = 7;
+        }
+
+        itineraryData.forEach((day, index) => {
+            const btn = document.createElement("button");
+            btn.className = `tab-btn whitespace-nowrap px-5 py-2.5 text-sm font-medium rounded-full border border-slate-200 text-slate-600 hover:bg-emerald-50 hover:text-emerald-700 transition-colors focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-1 ${index === currentDayIndex ? 'active' : ''}`;
+            btn.innerText = day.dayLabel;
+            btn.onclick = () => renderItinerary(index);
+            tabsContainer.appendChild(btn);
+        });
+
+        renderItinerary(currentDayIndex);
+    }
+
+    function renderItinerary(index) {
+        currentDayIndex = index;
+        const data = itineraryData[index];
+        
+        // Update active tab styling
+        document.querySelectorAll(".tab-btn").forEach((btn, i) => {
+            if(i === index) {
+                btn.classList.add("active");
+                btn.classList.remove("text-slate-600", "bg-white");
+            } else {
+                btn.classList.remove("active");
+                btn.classList.add("text-slate-600");
+            }
+        });
+
+        // Update Overview
+        document.getElementById("dailyOverview").innerHTML = `
+            <div>
+                <div class="font-bold text-lg text-slate-900 mb-1">${data.dateFull}</div>
+                <div class="text-emerald-700 font-medium">${data.title}</div>
+            </div>
+            <div class="flex items-center gap-2 bg-slate-50 px-4 py-2 rounded-xl text-slate-600 font-medium border border-slate-100">
+                <i data-lucide="cloud-sun" class="w-4 h-4"></i> <span>${data.weather}</span>
+            </div>
+        `;
+
+        // Update Timeline
+        const timeline = document.getElementById("timelineContainer");
+        timeline.innerHTML = '';
+        
+        data.events.forEach(ev => {
+            let linkHtml = '';
+            let textDesc = ev.desc;
+            
+            if (ev.link && ev.linkText) {
+                // Replace linkText in description with actual <a> tag
+                textDesc = textDesc.replace(ev.linkText, `<a href="${ev.link}" target="_blank" class="text-emerald-600 font-semibold hover:underline hover:text-emerald-800 transition-colors">${ev.linkText} <i data-lucide="external-link" class="w-3 h-3 inline-block"></i></a>`);
+            }
+
+            const itemHtml = `
+                <div class="relative pl-6 md:pl-8 group">
+                    <div class="absolute w-3 h-3 bg-emerald-500 rounded-full -left-[6px] top-1.5 ring-4 ring-white group-hover:scale-125 transition-transform"></div>
+                    <div class="flex flex-col md:flex-row md:items-baseline gap-1 md:gap-6 mb-1">
+                        <span class="text-sm font-bold text-slate-500 min-w-[70px]">${ev.time}</span>
+                        <div class="text-base text-slate-800 flex items-start gap-3 flex-1">
+                            <span class="mt-0.5 w-5 h-5 flex items-center justify-center shrink-0 text-slate-400 group-hover:text-emerald-600 transition-colors"><i data-lucide="${ev.icon}" class="w-4 h-4"></i></span>
+                            <span class="leading-relaxed">${textDesc}</span>
+                        </div>
+                    </div>
+                </div>
+            `;
+            timeline.innerHTML += itemHtml;
+        });
+
+        // Re-initialize lucide icons for newly added content
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+    }
+
+    function initWeather() {
+        // Chart.js Setup
+        const ctx = document.getElementById('weatherChart').getContext('2d');
+        
+        // Data derived from constraints
+        const labels = ['London (21-22)', 'Lake Dist (23)', 'Edinburgh (24-25)', 'York (26)', 'Bicester (27)', 'London (28)'];
+        const minTemps = [5, 3, 1, 2, 2, 6];
+        const maxTemps = [14, 10, 10, 11, 8, 12];
+        const rainLikelihood = [0, 65, 65, 10, 55, 65]; // for tooltip context
+
+        new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: labels,
+                datasets: [
+                    {
+                        label: 'อุณหภูมิสูงสุด (°C)',
+                        data: maxTemps,
+                        borderColor: '#f59e0b', // amber-500
+                        backgroundColor: 'rgba(245, 158, 11, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true,
+                        pointBackgroundColor: '#f59e0b',
+                        pointRadius: 5
+                    },
+                    {
+                        label: 'อุณหภูมิต่ำสุด (°C)',
+                        data: minTemps,
+                        borderColor: '#0ea5e9', // sky-500
+                        backgroundColor: 'rgba(14, 165, 233, 0.1)',
+                        borderWidth: 3,
+                        tension: 0.4,
+                        fill: true,
+                        pointBackgroundColor: '#0ea5e9',
+                        pointRadius: 5
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        position: 'top',
+                        labels: { font: { family: "'Prompt', sans-serif" } }
+                    },
+                    tooltip: {
+                        titleFont: { family: "'Prompt', sans-serif", size: 14 },
+                        bodyFont: { family: "'Prompt', sans-serif", size: 13 },
+                        callbacks: {
+                            afterBody: function(context) {
+                                const index = context[0].dataIndex;
+                                const rain = rainLikelihood[index];
+                                return rain > 0 ? `\nโอกาสฝนตก: ${rain}% 🌧️` : '';
+                            }
+                        }
+                    }
+                },
+                scales: {
+                    y: {
+                        min: 0,
+                        max: 16,
+                        ticks: {
+                            callback: function(value) { return value + '°C'; },
+                            font: { family: "'Prompt', sans-serif" }
+                        }
+                    },
+                    x: {
+                        ticks: { font: { family: "'Prompt', sans-serif" } }
+                    }
+                }
+            }
+        });
+
+        // Weather Cards Setup
+        const cardsContainer = document.getElementById("weatherCards");
+        cardsContainer.innerHTML = '';
+        weatherGuideData.forEach(item => {
+            cardsContainer.innerHTML += `
+                <div class="bg-white border border-slate-100 rounded-2xl p-6 hover:shadow-lg hover:border-emerald-200 transition-all duration-300 group">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div class="w-12 h-12 rounded-xl bg-slate-50 flex items-center justify-center text-slate-500 group-hover:bg-emerald-50 group-hover:text-emerald-600 transition-colors">
+                            <i data-lucide="${item.icon}" class="w-6 h-6"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-slate-900"><a href="${item.link}" target="_blank" class="hover:text-emerald-600 hover:underline">${item.city}</a></h3>
+                            <p class="text-xs text-slate-500 font-medium">${item.days}</p>
+                        </div>
+                    </div>
+                    <p class="text-sm text-slate-600 mb-3 font-medium leading-relaxed">${item.weather}</p>
+                    <div class="text-sm text-emerald-700 bg-emerald-50/50 p-3 rounded-xl border border-emerald-100 flex items-start gap-2">
+                        <i data-lucide="info" class="w-4 h-4 mt-0.5 shrink-0"></i>
+                        <span><span class="font-semibold">เตรียม:</span> ${item.gear}</span>
+                    </div>
+                </div>
+            `;
+        });
+        
+        // Initialize icons for cards
+        if (window.lucide) {
+            lucide.createIcons();
+        }
+    }
+
+    function initPassengers() {
+        const tbody = document.getElementById("passengerTableBody");
+        const searchInput = document.getElementById("searchInput");
+        const noResults = document.getElementById("noResults");
+
+        function renderTable(data) {
+            tbody.innerHTML = '';
+            if (data.length === 0) {
+                tbody.parentElement.classList.add("hidden");
+                noResults.classList.remove("hidden");
+                return;
+            }
+
+            data.forEach(p => {
+                tbody.innerHTML += `
+                    <tr class="hover:bg-emerald-50 transition-colors">
+                        <td class="px-6 py-4 whitespace-nowrap font-medium text-slate-900">${p.id}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-slate-700">${p.name}</td>
+                        <td class="px-6 py-4 whitespace-nowrap font-mono text-emerald-700">${p.pass}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-slate-600">${p.pof}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-slate-500 text-sm">${p.exp}</td>
+                    </tr>
+                `;
+            });
+        }
+
+        renderTable(passengersData);
+
+        searchInput.addEventListener("input", (e) => {
+            const term = e.target.value.toLowerCase();
+            const filtered = passengersData.filter(p => 
+                p.name.toLowerCase().includes(term) || 
+                p.pass.toLowerCase().includes(term) || 
+                p.pof.toLowerCase().includes(term)
+            );
+            renderTable(filtered);
+        });
+    }
+
+</script>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyB83MDQ6dlQKbwHx5Soj_BiXU_cCLT8RxQ",
+    authDomain: "carabao-cup-2026.firebaseapp.com",
+    projectId: "carabao-cup-2026",
+    storageBucket: "carabao-cup-2026.firebasestorage.app",
+    messagingSenderId: "128539575250",
+    appId: "1:128539575250:web:ccb0fdd8110da16fda7e0b",
+    measurementId: "G-VGV0VLXWK0"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+</body>
+</html>
